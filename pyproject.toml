@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "algo-trading"
+version = "0.1.0"
+description = "A library to interface with backtesting frameworks and live trading platforms."
+authors = ["raymond-devries <raymond.l.devries@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pandas = "^1.0.5"
+backtesting = "^0.1.7"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.4.3"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

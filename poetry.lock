@@ -138,8 +138,8 @@ category = "main"
 description = "A package that caches polygon API calls and seamlessly calls the API multiple times to get all requested data."
 name = "polygon-cache"
 optional = false
-python-versions = ">=3.6,<4.0"
-version = "0.1.1"
+python-versions = ">=3.8,<4.0"
+version = "0.1.2"
 
 [package.dependencies]
 polygon-api-client = ">=0.1.6,<0.2.0"
@@ -304,8 +304,7 @@ python-versions = ">=3.6"
 version = "8.0.2"
 
 [metadata]
-content-hash = "fc24e721e7c7d6a3c834598c1817a4ae0a3e9686160f0c6c351c21f22992eb27"
-lock-version = "1.0"
+content-hash = "05b8920ff2e984535118cc523226738266be353052e79a43f7daa28d45c3fb3b"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -429,8 +428,8 @@ polygon-api-client = [
     {file = "polygon_api_client-0.1.6-py3-none-any.whl", hash = "sha256:8792b719eac9282883ed890f8ecef8fb992cfe024086a900110834d6d565bf7f"},
 ]
 polygon-cache = [
-    {file = "polygon-cache-0.1.1.tar.gz", hash = "sha256:78b14aa616b84771665b318f6fa061e14e3eb1f2cf00daa0b493ebbb5efc75aa"},
-    {file = "polygon_cache-0.1.1-py3-none-any.whl", hash = "sha256:23dfc2e4a3720d537b65c9b439af488349a8002711f2e6917388f8c1f12ff256"},
+    {file = "polygon-cache-0.1.2.tar.gz", hash = "sha256:f6f04c35b9fd264bc65a929baf8808f465d82164190cbbfeff73b1c758c5374b"},
+    {file = "polygon_cache-0.1.2-py3-none-any.whl", hash = "sha256:c25f28b7619ef73421b5d66feb9a620635e5a52bedcac3c508209815dead82aa"},
 ]
 py = [
     {file = "py-1.9.0-py2.py3-none-any.whl", hash = "sha256:366389d1db726cd2fcfc79732e75410e5fe4d31db13692115529d34069a043c2"},

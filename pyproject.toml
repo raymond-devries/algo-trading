@@ -9,7 +9,7 @@ license = "MIT"
 python = "^3.8"
 pandas = "^1.0.5"
 python-decouple = "^3.3"
-polygon-cache = "^0.1.1"
+polygon-cache = "^0.1.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.4.3"

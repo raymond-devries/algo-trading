@@ -6,7 +6,7 @@ from algo_trading.settings import POLYGON_KEY
 client = CachedRESTClient(POLYGON_KEY)
 
 
-def get_ticker_info(ticker, multiplier, timespan, from_, to) -> pd.DataFrame:
+def get_ticker_info(ticker: str, multiplier: int, timespan: str, from_: str, to: str) -> pd.DataFrame:
     """
     :param ticker: The ticker of the stock data you are trying to retrieve. i.e. AMD
     :param multiplier: Time multiplier for the timespan.
@@ -22,7 +22,7 @@ def get_ticker_info(ticker, multiplier, timespan, from_, to) -> pd.DataFrame:
     return transform_json_data_to_df(json_data.results)
 
 
-def transform_json_data_to_df(json_data):
+def transform_json_data_to_df(json_data: dict):
     df = pd.DataFrame(json_data)
     df["date"] = pd.to_datetime(df["t"], unit="ms", utc=True)
     df = df.set_index("date")

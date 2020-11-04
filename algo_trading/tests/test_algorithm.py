@@ -1,6 +1,7 @@
-import pytest
-import pandas as pd
 import numbers
+
+import pandas as pd
+import pytest
 
 from algo_trading.algorithm import Algorithm
 
@@ -23,13 +24,9 @@ def test_algorithm_instantiation():
         Algorithm()
 
 
-attributes = [
-    ('buying_power', numbers.Real),
-    ('buys', pd.Series),
-    ('sells', pd.Series)
-]
+attributes = [("buying_power", numbers.Real), ("buys", pd.Series), ("sells", pd.Series)]
 
 
-@pytest.mark.parametrize('attribute, expected_type', attributes)
+@pytest.mark.parametrize("attribute, expected_type", attributes)
 def test_algorithm_attribute_types(attribute, expected_type, create_algorithm_class):
     assert isinstance(getattr(create_algorithm_class, attribute), expected_type)

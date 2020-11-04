@@ -22,4 +22,3 @@ class Algorithm(ABC):
 
     def sell(self):
         pass
-

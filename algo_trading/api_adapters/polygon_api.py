@@ -1,3 +1,33 @@
-from decouple import config
+import pandas as pd
+from polygon_cache.cache import CachedRESTClient
 
-POLYGON_API_KEY = config('POLYGON_API_KEY')
+from algo_trading.settings import POLYGON_KEY
+
+client = CachedRESTClient(POLYGON_KEY)
+
+
+def get_ticker_info(ticker, multiplier, timespan, from_, to) -> pd.DataFrame:
+    """
+    :param ticker: The ticker of the stock data you are trying to retrieve. i.e. AMD
+    :param multiplier: Time multiplier for the timespan.
+    :param timespan: Valid timespans are minute, hour, day, year.
+    :param from_: Date in YYYY-MM-DD format.
+    :param to: Date in YYYY-MM-DD format.
+    :return: a pandas dataframe of requested values
+    """
+    json_data = client.stocks_equities_aggregates(
+        ticker, multiplier, timespan, from_, to
+    )
+
+    return transform_json_data_to_df(json_data.results)
+
+
+def transform_json_data_to_df(json_data):
+    df = pd.DataFrame(json_data)
+    df["date"] = pd.to_datetime(df["t"], unit="ms", utc=True)
+    df = df.set_index("date")
+    df = df[["v", "o", "c", "h", "l"]]
+    df = df.rename(
+        columns={"v": "volume", "o": "open", "c": "close", "h": "high", "l": "low"}
+    )
+    return df

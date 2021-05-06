@@ -2,7 +2,7 @@
 name = "algo-trading"
 version = "0.1.0"
 description = "A library to interface with backtesting frameworks and live trading platforms."
-authors = ["raymond-devries <raymond.l.devries@gmail.com>"]
+authors = ["Raymond DeVries"]
 license = "MIT"
 
 [tool.poetry.dependencies]
